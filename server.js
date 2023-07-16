@@ -16,28 +16,40 @@ const hostname = "127.0.0.1";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-//* paths for diffrent foders
-// const pathOf =
+//* path of directories
+const templatesPath = path.join(__dirname,"./templates")
+const viewsPath = path.join(__dirname,"./templates/views")
+const partialsPath = path.join(__dirname,"./templates/partials")
 
-// Configure static file serving
+
+
+//* View engine setting
+//set template/view engine
+app.set("view engine", "hbs");
+// changing folder name views to templates
+app.set("views", viewsPath);
+// Using partials
+hbs.registerPartials(partialsPath);
+
+
+
+
+app.use(express.urlencoded({ extended: true }));
+
+//* Configure static file serving
 app.use(express.static(path.join(__dirname, "/public")));
 
+//* serving templates files
 app.get("/", (req, res) => {
-    res.status(200).sendFile(path.join(__dirname ,'/public/html/index.html'));
+    res.status(200).render('index');
+});
+app.get("/weather", (req, res) => {
+    res.status(200).render('weather');
 });
 
-app.get("/about",(req,res)=>{
-    res.status(200).sendFile(path.join(__dirname ,'/public/html/index.html'));
-    
-})
-app.get("/main.css",(req,res)=>{
-    res.status(200).sendFile(path.join(__dirname ,'/public/css/output.css'));
-    
-})
-app.get("/public",(req,res)=>{
-    res.status(200).sendFile(path.join(__dirname +'/public'));
-    
-})
+
+
+
 
 
 app.listen(port, hostname, () => {

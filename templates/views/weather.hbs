@@ -1,0 +1,77 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link href="/css/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style></style>
+  </head>
+
+  <body class="">
+    {{>header}}
+    <main class="container mx-auto p-1 flex flex-col items-center">
+      <div class="w-full">
+        <form action="" class="bg-slate-800 my-10 p-1 md:p-2 mx-auto flex gap-1 max-w-lg justify-between rounded-md">
+          <input type="text" class="bg-transparent p-1 md:p-2 grow" placeholder="Enter City" />
+          <input type="submit" value="Search" placeholder="" class="text-white bg-yellow-400 hover:bg-opacity-80 font-medium cursor-pointer p-2 rounded-md" />
+        </form>
+      </div>
+
+      <div class="font-roboto bg-slate-800 max-w-sm rounded-md p-2 flex flex-col item-center text-white">
+        <div class="bg-white bg-opacity-5 p-3 backdrop-blur-md flex flex-col">
+          <div class="flex items-center text-white gap-2">
+            <i class="fa-solid fa-location-dot text-yellow-400 text-lg"></i>
+            <span class="tracking-wide">Parbhani, IN</span>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="text-8xl text-white font-semibold my-2">
+              24<span class="text-6xl"><sup>o</sup>C</span>
+            </span>
+
+          </div>
+        </div>
+
+        <div class="flex py-3 tracking-wide">
+          <div class="flex flex-col gap-1 justify-center">
+            <div class="">
+              min : 27<sup>o</sup>C
+            </div>
+
+            <div class="">
+              max : 28<sup>o</sup>C
+            </div>
+          </div>
+
+          <div class="max-w-[150px]">
+            <img src="/assets/favicon.svg" alt="" class="w-2/4 min-w-[75px] m-auto" />
+          </div>
+
+        </div>
+
+        <div class="flex gap-2 items-center">
+            <div class="grow">
+                <img src="/assets/favicon.svg" alt="" class="  w-[16px]  m-auto" />
+            </div>
+            <div class="grow">75%</div>
+            <div class="grow">
+                <img src="/assets/favicon.svg" alt="" class="  mw-[16px]  m-auto" />
+            </div>
+            <div class="grow">15 km/h</div>
+        </div>
+
+        
+
+      </div>
+
+    </main>
+
+    <!-- Initialize Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="/scripts/swiper.js"></script>
+  </body>
+
+</html>
