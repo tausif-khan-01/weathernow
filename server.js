@@ -31,7 +31,7 @@ app.set("views", viewsPath);
 // Using partials
 hbs.registerPartials(partialsPath);
 
-
+// https://openweathermap.org/img/wn/${}@2x.png
 
 
 app.use(express.urlencoded({ extended: true }));
