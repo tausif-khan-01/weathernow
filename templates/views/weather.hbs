@@ -1,6 +1,7 @@
 <html>
 
   <head>
+    <title>WeatherNow!</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon" />
@@ -15,12 +16,12 @@
     <main class="container mx-auto p-1 flex flex-col items-center">
       <div class="w-full">
         <form action="" class="bg-slate-800 my-10 p-1 md:p-2 mx-auto flex gap-1 max-w-lg justify-between rounded-md">
-          <input type="text" class="bg-transparent p-1 md:p-2 grow" placeholder="Enter City" />
+          <input type="text" class="bg-transparent p-1 md:p-2 grow text-white outline-none" placeholder="Enter City" />
           <input type="submit" value="Search" placeholder="" class="text-white bg-yellow-400 hover:bg-opacity-80 font-medium cursor-pointer p-2 rounded-md" />
         </form>
       </div>
 
-      <div class="font-roboto bg-slate-800 max-w-sm rounded-md p-2 flex flex-col item-center text-white">
+      <div class="font-roboto bg-slate-800 max-w-sm rounded-md p-2 flex flex-col gap-2 item-center text-white backdrop-blur-lg">
         <div class="bg-white bg-opacity-5 p-3 backdrop-blur-md flex flex-col">
           <div class="flex items-center text-white gap-2">
             <i class="fa-solid fa-location-dot text-yellow-400 text-lg"></i>
@@ -38,35 +39,44 @@
           </div>
         </div>
 
-        <div class="flex py-3 tracking-wide justify-center gap-2">
-          <div class="flex flex-col gap-1 justify-center">
-            <div class="">
-              min : 27<sup>o</sup>C
+        <div class="flex flex-col ">
+          <div class="flex  tracking-wide  justify-evenly gap-2">
+            <div class="flex flex-col   items-center  gap-1  justify-center min-w-max">
+              <div class="font-mono text-xl">
+                MIN : 27<sup>o</sup>C
+              </div>
+              <div class="font-mono text-xl">
+                MAX : 27<sup>o</sup>C
+              </div>
+              
             </div>
 
-            <div class="">
-              max : 28<sup>o</sup>C
+            <div class="w-1/2 flex justify-center items-center">
+              <img src="/assets/weather/09d.svg" alt="" class="m-auto" />
             </div>
           </div>
 
-          <div class="">
-            <img src="/assets/favicon.svg" alt="" class="w-3/4 min-w-[75px] m-auto" />
+          <div class="flex  items-center text-xl  justify-around  ">
+
+            <div class="flex items-center gap-2">
+              <div class="">
+                <img src="/assets/drop-humidity-icon.svg" alt="" class="  w-6   m-auto" />
+              </div>
+              <div class="grow font-mono">75%</div>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <div class="">              
+                  <img src="/assets/windsock-100.png" alt="" class="   w-6  m-auto" />
+                </div>
+                <div class="grow font-mono">15km/hr</div>
+            </div>
           </div>
 
         </div>
 
-        <div class="flex gap-2 items-center">
-          <div class="grow">
-            <img src="/assets/favicon.svg" alt="" class="w-[16px] m-auto" />
-          </div>
-          <div class="grow">75%</div>
-          <div class="grow">
-            <img src="/assets/favicon.svg" alt="" class="mw-[16px] m-auto" />
-          </div>
-          <div class="grow">15 km/h</div>
-        </div>
-        <div class="mt-4 text-xl tracking-wider font-semibold">
-          <div class="bg-white bg-opacity-5 p-3 backdrop-blur-md">
+        <div class="tracking-wider font-semibold mt-4">
+          <div class="bg-white bg-opacity-5 p-3 backdrop-blur-md text-xl">
             Friday
           </div>
         </div>
@@ -78,6 +88,7 @@
     <!-- Initialize Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="/scripts/swiper.js"></script>
+    <script type="module" src="/scripts"></script>
   </body>
 
 </html>
