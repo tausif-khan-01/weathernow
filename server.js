@@ -43,13 +43,20 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.get("/", (req, res) => {
     res.status(200).render('index');
 });
+
+const hi = "Tausif"
 app.get("/weather", (req, res) => {
-    res.status(200).render('weather');
+  res.status(200).render('weather',{
+    hello : hi
+  });
 });
 
-
-
-
+app.post('/getvalue',(req,res)=>{
+  console.log(req.body.search)
+  res.status(200).render('weather',{
+    hello : req.body.search
+  });
+})
 
 
 app.listen(port, hostname, () => {
