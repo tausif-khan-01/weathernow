@@ -46,17 +46,11 @@ app.get("/", (req, res) => {
 
 const hi = "Tausif"
 app.get("/weather", (req, res) => {
-  res.status(200).render('weather',{
-    hello : hi
-  });
+  res.status(200).render('weather');
 });
 
-app.post('/getvalue',(req,res)=>{
-  console.log(req.body.search)
-  res.status(200).render('weather',{
-    hello : req.body.search
-  });
-})
+
+
 
 
 app.listen(port, hostname, () => {
