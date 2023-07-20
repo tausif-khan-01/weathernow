@@ -22,6 +22,7 @@ const searchedCity = document.getElementById("searchArea").value;
 const searchBtn = document.getElementById("searchBtn"); //!
 const temp = document.getElementById("temp"); //!
 
+const locationArea = document.getElementById("locationArea");
 const locationCity = document.getElementById("locationCity");
 const locationCountry = document.getElementById("locationCountry");
 const weatherDescription = document.getElementById("weatherDescription");
@@ -32,6 +33,10 @@ const humidity = document.getElementById("humidity");
 const today = document.getElementById("today");
 const weatherIcon = document.getElementById("weatherIcon");
 const weatherBox = document.getElementById("weatherBox");
+
+
+
+
 
 searchBtn.addEventListener("click", () => {
   const searchedCity = document.getElementById("searchArea").value;

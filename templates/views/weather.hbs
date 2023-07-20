@@ -25,14 +25,14 @@
 
       <div id="weatherBox" class="font-roboto bg-slate-800 max-w-sm rounded-md p-2 flex flex-col gap-2 item-center text-white backdrop-blur-lg">
         <div class="bg-white bg-opacity-5 p-3 backdrop-blur-md flex flex-col">
-          <div class="flex items-center text-white gap-2">
-            <i class="fa-solid fa-location-dot text-yellow-400 text-lg"></i>
-            <span class="tracking-wide" id="location"><span id="locationCity">{{hello}}</span>, <span id="locationCountry">IN</span></span>
+          <div id="locationArea" class="flex items-center text-white gap-2">
+            
           </div>
 
           <div class="flex flex-col">
-            <span class="text-7xl text-white font-semibold my-2">
-              <span id="temp">24</span><span class="text-6xl"><sup>o</sup>C</span>
+
+            <span id="temp" class="text-7xl text-white font-semibold my-2">
+              
             </span>
           </div>
 
@@ -43,37 +43,31 @@
 
         <div class="flex flex-col">
           <div class="flex tracking-wide justify-evenly gap-2">
-            <div class="flex flex-col items-center gap-1 justify-center min-w-max">
-              <div class="font-mono text-xl">
-                <span>MIN :</span>
-                <span id="mintemp">27</span><sup>o</sup>C
+            <div class="flex flex-col items-center gap-1 justify-center  min-w-max">
+              <div id="mintemp" class="font-mono text-xl">
+                {{!-- <span>MIN :</span>
+                <span >27</span><sup>o</sup>C --}}
               </div>
-              <div class="font-mono text-xl">
-                <span>MAX :</span>
-                <span id="maxtemp">27</span><sup>o</sup>C
+              <div id="maxtemp" class="font-mono text-xl">
+                
               </div>
 
             </div>
 
-            <div class="w-1/2 flex justify-center items-center">
-              <img src="/assets/weather/09d.svg" alt="" id="weatherIcon" class="m-auto" />
+            <div id="weatherIcon" class="w-1/2 flex justify-center items-center">
+              
             </div>
           </div>
 
-          <div class="flex items-center text-xl justify-around">
+          <div id="windAndHumidityArea" class="flex items-center text-xl justify-around " >
 
-            <div class="flex items-center gap-2">
-              <div class="">
-                <img src="/assets/drop-humidity-icon.svg" alt="" class="w-6 m-auto" />
-              </div>
-              <div class="grow font-mono"><span id="humidity">75</span>%</div>
+            <div id="humidity" class="flex items-center gap-2" >
+              
             </div>
-
-            <div class="flex items-center gap-2">
-              <div class="">
-                <img src="/assets/windsock-100.png" alt="" class="w-6 m-auto" />
-              </div>
-              <div class="grow font-mono"><span id="windSpeed">15</span>km/hr</div>
+            
+            
+            <div id="windSpeed" class="flex items-center gap-2">
+              
             </div>
           </div>
 
