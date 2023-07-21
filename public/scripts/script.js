@@ -1,27 +1,9 @@
-// #searchArea
-// #searchBtn
-// #location
-// #locationCity
-// #locationCountry
-// #temp
-// #weatherDescription
-// #mintemp
-// #maxtemp
-// windSpeed
-// humidity
-// today
+import { getLocationAndCity } from "./geolocation.js";
+import { getweatherData } from "./weather.js";
 
-// weather API ID
-//7c48a89144318f7fadb3ff521900fa26
-// using ciy name
-// https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-import { getweatherData } from './weather.js'
 const searchedCity = document.getElementById("searchArea").value;
-
-
 const searchBtn = document.getElementById("searchBtn"); //!
 const temp = document.getElementById("temp"); //!
-
 const locationArea = document.getElementById("locationArea");
 const locationCity = document.getElementById("locationCity");
 const locationCountry = document.getElementById("locationCountry");
@@ -34,17 +16,43 @@ const today = document.getElementById("today");
 const weatherIcon = document.getElementById("weatherIcon");
 const weatherBox = document.getElementById("weatherBox");
 
+export async function getUserLocation() {
+  if (navigator.geolocation) {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          resolve({ latitude, longitude });
+        },
 
+        () => {
+          searchBtn.addEventListener("click", () => {
+            const searchedCity = document.getElementById("searchArea").value;
 
+            if (searchedCity) {
+              getweatherData(searchedCity);
+            }
+          });
+          reject((humidity.innerHTML = `location does not allowed Search for your city`));
+        }
+      );
+    });
+  } else {
+    return Promise.reject("Geolocation is not supported by this browser.");
+  }
+}
+const idarHAi = await getUserLocation();
+const mHAi = idarHAi.longitude;
 
+if (mHAi) {
+  const searchedCity = await getLocationAndCity();
+  getweatherData(searchedCity);
+  console.log("location hai");
+}
 
 searchBtn.addEventListener("click", () => {
   const searchedCity = document.getElementById("searchArea").value;
-
   if (searchedCity) {
-    getweatherData(searchedCity);;
-  } else {
-    weatherBox.innerHTML = `<div>search for your city</div>`;
+    getweatherData(searchedCity);
   }
 });
-
