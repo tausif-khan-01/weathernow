@@ -1,5 +1,4 @@
 <html>
-
   <head>
     <title>WeatherNow!</title>
     <meta charset="UTF-8" />
@@ -10,9 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style></style>
   </head>
-
   <body class="">
-    {{>header}}
     <main class="container mx-auto p-1 flex flex-col items-center">
       {{! search box }}
       <div class="w-full">
@@ -21,72 +18,45 @@
           <input type="submit" id="searchBtn" value="Search" class="text-white bg-yellow-400 hover:bg-opacity-80 font-medium cursor-pointer p-2 rounded-md" />
         </div>
       </div>
-
       {{! results }}
       <div id="weatherBox" class="font-roboto bg-slate-800 max-w-sm rounded-md p-2 flex flex-col gap-2 item-center text-white backdrop-blur-lg">
         <div class="bg-white bg-opacity-5 p-3 backdrop-blur-md flex flex-col">
           <div id="locationArea" class="flex items-center text-white gap-2">
-
           </div>
-
           <div class="flex flex-col">
-
             <span id="temp" class="text-7xl text-white font-semibold my-2">
-
             </span>
           </div>
-
           <div class="" id="weatherDescription">
-
           </div>
         </div>
-
         <div class="flex flex-col">
           <div class="flex tracking-wide justify-evenly gap-2">
             <div class="flex flex-col items-center gap-1 justify-center min-w-max">
               <div id="mintemp" class="font-mono text-xl">
-                {{! <span>MIN :</span>
-                <span >27</span><sup>o</sup>C }}
               </div>
               <div id="maxtemp" class="font-mono text-xl">
-
               </div>
-
             </div>
-
             <div id="weatherIcon" class="w-1/2 flex justify-center items-center">
-
             </div>
           </div>
-
           <div id="windAndHumidityArea" class="flex items-center text-xl justify-around">
-
             <div id="humidity" class="flex items-center gap-2">
-
             </div>
-
             <div id="windSpeed" class="flex items-center gap-2">
-
             </div>
           </div>
-
         </div>
-
         <div class="tracking-wider font-semibold mt-4">
           <div class="bg-white bg-opacity-5 p-3 backdrop-blur-md text-xl" id="today">
-
           </div>
         </div>
-
       </div>
-
     </main>
-
     <!-- Initialize Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="/scripts/swiper.js"></script>
     <script type="module" src="/scripts/script.js"></script>
-
   </body>
-
 </html>
