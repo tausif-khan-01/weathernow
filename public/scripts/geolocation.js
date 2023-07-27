@@ -1,7 +1,7 @@
 import { getUserLocation } from "./script.js";
 
 const userLocationData = (latitude, longitude) => {
-  return fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=7c48a89144318f7fadb3ff521900fa26`)
+  return fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=7c48a89144318f7fadb3ff521900fa26`)
     .then((response) => response.json())
     .then((userLocationData) => {
       const cityName = userLocationData[0].name;
