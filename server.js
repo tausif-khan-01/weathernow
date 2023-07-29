@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 const app = express();
 
 
-const port = 80;
+const port = 3000;
 const hostname = "127.0.0.1";
 
 //* Get the current filename and directory paths
@@ -17,9 +17,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 //* path of directories
-const templatesPath = path.join(__dirname,"./templates")
-const viewsPath = path.join(__dirname,"./templates/views")
-const partialsPath = path.join(__dirname,"./templates/partials")
+const templatesPath = path.join(__dirname, "./templates")
+const viewsPath = path.join(__dirname, "./templates/views")
+const partialsPath = path.join(__dirname, "./templates/partials")
 
 
 
@@ -39,15 +39,15 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 //* serving templates files
 app.get("/", (req, res) => {
-    res.status(200).render('index');
+  res.status(200).render('index');
 });
 
-const hi = "Tausif"
+
 app.get("/weather", (req, res) => {
   res.status(200).render('weather');
 });
 
 
-app.listen(port, hostname, () => {
-  console.log(`server is online at http://${hostname}`);
+app.listen(port, () => {
+  console.log(`server is online `);
 });
