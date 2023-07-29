@@ -1,2 +1,2 @@
- # weathercheck
+ # weathernow
  
