@@ -26,14 +26,10 @@ export async function getUserLocation() {
         },
 
         () => {
-          searchBtn.addEventListener("click", () => {
-            const searchedCity = document.getElementById("searchArea").value;
-
-            if (searchedCity) {
-              getweatherData(searchedCity);
-            }
-          });
-          reject((humidity.innerHTML = `location does not allowed Search for your city`));
+          searchCityManually();
+          reject(
+            (humidity.innerHTML = `location does not allowed Search for your city`)
+          );
         }
       );
     });
@@ -47,12 +43,13 @@ const mHAi = idarHAi.longitude;
 if (mHAi) {
   const searchedCity = await getLocationAndCity();
   getweatherData(searchedCity);
-  console.log("location hai");
 }
 
-searchBtn.addEventListener("click", () => {
-  const searchedCity = document.getElementById("searchArea").value;
-  if (searchedCity) {
-    getweatherData(searchedCity);
-  }
-});
+function searchCityManually() {
+  searchBtn.addEventListener("click", () => {
+    const searchedCity = document.getElementById("searchArea").value;
+    if (searchedCity) {
+      getweatherData(searchedCity);
+    }
+  });
+}

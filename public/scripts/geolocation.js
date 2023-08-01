@@ -17,8 +17,7 @@ export async function getLocationAndCity() {
   try {
     const location = await getUserLocation();
     const { latitude, longitude } = location;
-    // console.log("Latitude:", latitude);
-    // console.log("Longitude:", longitude);
+   
     const nameOfCity = await userLocationData(latitude, longitude);
 
     return nameOfCity; // You can return it from the function if needed
