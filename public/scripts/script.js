@@ -37,6 +37,7 @@ export async function getUserLocation() {
     return Promise.reject("Geolocation is not supported by this browser.");
   }
 }
+
 const idarHAi = await getUserLocation();
 const mHAi = idarHAi.longitude;
 
@@ -50,6 +51,8 @@ function searchCityManually() {
     const searchedCity = document.getElementById("searchArea").value;
     if (searchedCity) {
       getweatherData(searchedCity);
+    }else{
+      humidity.innerHTML = `Try seaching for your city`
     }
   });
 }

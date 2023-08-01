@@ -19,7 +19,6 @@ export const getweatherData = (city) => {
       windSpeed.innerHTML = `<div ><img src="/assets/windsock-100.png" alt="" class="w-6 m-auto" /></div><div class="grow font-mono"><span id="">${weatherData.wind.speed}</span>km/hr</div>`;
       locationArea.innerHTML = `<i class="fa-solid fa-location-dot text-yellow-400 text-lg"></i><span class="tracking-wide" >${weatherData.name}, ${weatherData.sys.country}</span>`;
       const Day = getToday();
-      console.log(Day);
 
       weatherIcon.innerHTML = `<img src="/assets/weather/${weatherData.weather[0].icon}.svg" alt=""  class="m-auto" />`;
       today.innerHTML = `${Day}`;
