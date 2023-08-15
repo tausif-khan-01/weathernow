@@ -1,5 +1,5 @@
 <header class="bg-[#FCF8F1] bg-opacity-30">
-    <div class="px-4 mx-auto sm:px-6 lg:px-8">
+    <div class=" relative px-4 mx-auto sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
             <div class="flex-shrink-0">
                 <a href="/" title="" class="flex">
@@ -9,17 +9,17 @@
                 </a>
             </div>
 
-            <button type="button"
-                class="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100">
+            <button type="button " id="menuBtn"
+                class="inline-flex cursor-pointer p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100">
                 <!-- Menu open: "hidden", Menu closed: "block" -->
-                <svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
+                <svg id="menuBtnOpen" class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
                 </svg>
 
                 <!-- Menu open: "block", Menu closed: "hidden" -->
-                <svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
+                <svg id="menuBtnClose" class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                     </path>
                 </svg>
@@ -41,6 +41,13 @@
                 role="button">
                 Check <span><img src="/assets/favicon.svg" alt="" class="w-5" /></span> Now
             </a>
+        </div>
+        <div id="menuList"
+            class="absolute rounded-md z-50 text-white text-center  left-0 bg-slate-800 h-0  transition-[height] duration-300     font-bold right-0 flex flex-col  overflow-hidden items-center justify-between drop-shadow-2xl     lg:hidden  ">
+            <a href="/" class=" border-b-slate-100 border-b w-full py-3  ">Home</a>
+            <a href="" class=" border-b-slate-100 border-b w-full py-3">About</a>
+            <a href="/weather" class=" w-full   py-3">WeatherNow!</a>
+
         </div>
     </div>
 </header>

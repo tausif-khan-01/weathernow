@@ -51,8 +51,11 @@ function searchCityManually() {
     const searchedCity = document.getElementById("searchArea").value;
     if (searchedCity) {
       getweatherData(searchedCity);
-    }else{
-      humidity.innerHTML = `Try seaching for your city`
+    } else {
+      humidity.innerHTML = `Try seaching for your city`;
     }
   });
 }
+
+
+
