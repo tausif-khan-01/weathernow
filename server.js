@@ -48,6 +48,11 @@ app.get("/weather", (req, res) => {
 });
 
 
+app.get("/*",(req,res)=>{
+  res.status(404).render('notfound');
+  
+})
+
 app.listen(port, () => {
   console.log(`server is online `);
 });

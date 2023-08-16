@@ -1,65 +1,83 @@
 <html>
-  <head>
-    <title>WeatherNow!</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link href="/css/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <style></style>
-  </head>
-  <body class="h-screen  flex flex-col ">
-    {{>header}}
-    <main class="container mx-auto p-1 flex flex-col items-center">
-      {{! search box }}
-      <div class="w-full">
-        <div id="searchForm" class="bg-slate-800 my-5 p-1 md:p-2 mx-auto flex gap-1 max-w-lg justify-between rounded-md">
-          <input type="text" id="searchArea" name="search" autocomplete="off" class="bg-transparent p-1 md:p-2 grow text-white outline-none" placeholder="Enter City" />
-          <input type="submit" id="searchBtn" value="Search" class="text-white bg-yellow-400 hover:bg-opacity-80 font-medium cursor-pointer p-2 rounded-md" />
-        </div>
+
+<head>
+  <title>WeatherNow!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link href="/css/output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style></style>
+</head>
+
+<body class="h-screen  flex flex-col ">
+  {{>header}}
+  <main class="container mx-auto p-1 flex flex-1 flex-col items-center ">
+    {{! search box }}
+    <div class="w-full   ">
+      <div id="searchForm" class="bg-slate-800 my-5 p-1 md:p-2 mx-auto flex gap-1 max-w-lg justify-between rounded-md">
+        <input type="text" id="searchArea" name="search" autocomplete="off"
+          class="bg-transparent p-1 md:p-2 grow text-white outline-none" placeholder="Enter City" />
+        <input type="submit" id="searchBtn" value="Search"
+          class="text-white bg-yellow-400 hover:bg-opacity-80 font-medium cursor-pointer p-2 rounded-md" />
       </div>
-      {{! results }}
-      <div id="weatherBox" class="font-roboto bg-slate-800 max-w-sm rounded-md p-2 flex flex-col gap-2 item-center text-white backdrop-blur-lg">
-        <div class="bg-white bg-opacity-5 p-3 backdrop-blur-md flex flex-col">
-          <div id="locationArea" class="flex items-center text-white gap-2">
-          </div>
-          <div class="flex flex-col">
-            <span id="temp" class="text-7xl text-white font-semibold my-2">
-            </span>
-          </div>
-          <div class="" id="weatherDescription">
-          </div>
+    </div>
+    {{! results }}
+    <div id="weatherBox"
+      class="font-roboto bg-slate-800 max-w-sm rounded-md p-2 hidden flex-col gap-2 item-center   text-white backdrop-blur-lg">
+      <div class="bg-white bg-opacity-5 p-3 backdrop-blur-md flex flex-col">
+        <div id="locationArea" class="flex items-center text-white gap-2">
         </div>
         <div class="flex flex-col">
-          <div class="flex tracking-wide justify-evenly gap-2">
-            <div class="flex flex-col items-center gap-1 justify-center min-w-max">
-              <div id="mintemp" class="font-mono text-xl">
-              </div>
-              <div id="maxtemp" class="font-mono text-xl">
-              </div>
+          <span id="temp" class="text-7xl text-white font-semibold my-2">
+          </span>
+        </div>
+        <div class="" id="weatherDescription">
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="flex tracking-wide justify-evenly gap-2">
+          <div class="flex flex-col items-center gap-1 justify-center min-w-max">
+            <div id="mintemp" class="font-mono text-xl">
             </div>
-            <div id="weatherIcon" class="w-1/2 flex justify-center items-center">
+            <div id="maxtemp" class="font-mono text-xl">
             </div>
           </div>
-          <div id="windAndHumidityArea" class="flex items-center text-xl justify-around">
-            <div id="humidity" class="flex items-center gap-2">
-            </div>
-            <div id="windSpeed" class="flex items-center gap-2">
-            </div>
+          <div id="weatherIcon" class="w-1/2 flex justify-center items-center">
           </div>
         </div>
-        <div class="tracking-wider font-semibold mt-4">
-          <div class="bg-white bg-opacity-5 p-3 backdrop-blur-md text-xl" id="today">
+        <div id="windAndHumidityArea" class="flex items-center text-xl justify-around">
+          <div id="humidity" class="flex items-center gap-2">
+          </div>
+          <div id="windSpeed" class="flex items-center gap-2">
           </div>
         </div>
       </div>
-    </main>
-    {{>footer}}
-    <!-- Initialize Swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="/scripts/swiper.js"></script>
-    <script type="module" src="/scripts/script.js"></script>
-    <script type="module" src="/scripts/menu.js"></script>
-  </body>
+      <div class="tracking-wider font-semibold mt-4">
+        <div class="bg-white bg-opacity-5 p-3 backdrop-blur-md text-xl" id="today">
+        </div>
+      </div>
+    </div>
+
+    <div id="loading" class="flex w-full h-full justify-center items-center -translate-y-20        ">
+      <svg  class="animate-spin  -ml-1 mr-3 h-10 w-8 text-slate-800 " xmlns="http://www.w3.org/2000/svg"
+      fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor"
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+      </path>
+    </svg>
+    <span class="font-bold text-lg  text-slate-800 ">Loading...</span>
+    </div>
+  </main>
+  {{>footer}}
+  <!-- Initialize Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="/scripts/swiper.js"></script>
+  <script type="module" src="/scripts/script.js"></script>
+  <script type="module" src="/scripts/menu.js"></script>
+</body>
+
 </html>
