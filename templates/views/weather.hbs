@@ -16,12 +16,12 @@
   <main class="container mx-auto p-1 flex flex-1 flex-col items-center ">
     {{! search box }}
     <div class="w-full   ">
-      <div id="searchForm" class="bg-slate-800 my-5 p-1 md:p-2 mx-auto flex gap-1 max-w-lg justify-between rounded-md">
+      <form id="searchForm" class="bg-slate-800 my-5 p-1 md:p-2 mx-auto flex gap-1 max-w-lg justify-between rounded-md">
         <input type="text" id="searchArea" name="search" autocomplete="off"
           class="bg-transparent p-1 md:p-2 grow text-white outline-none" placeholder="Enter City" />
         <input type="submit" id="searchBtn" value="Search"
           class="text-white bg-yellow-400 hover:bg-opacity-80 font-medium cursor-pointer p-2 rounded-md" />
-      </div>
+      </form>
     </div>
     {{! results }}
     <div id="weatherBox"

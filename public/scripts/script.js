@@ -2,15 +2,10 @@ import { getLocationAndCity } from "./geolocation.js";
 import { hideLoading, showWeatherBox } from "./loading.js";
 import { getweatherData } from "./weather.js";
 
-const searchBtn = document.getElementById("searchBtn"); 
+const searchBtn = document.getElementById("searchBtn");
 const humidity = document.getElementById("humidity");
 
-// const searchedCity = document.getElementById("searchArea").value;
-// const locationArea = document.getElementById("locationArea");
-// const locationCity = document.getElementById("locationCity");
-// const locationCountry = document.getElementById("locationCountry");
-// const today = document.getElementById("today");
-// const weatherBox = document.getElementById("weatherBox");
+
 
 export async function getUserLocation() {
   if (navigator.geolocation) {
@@ -23,9 +18,9 @@ export async function getUserLocation() {
         () => {
           searchCityManually();
           reject(
-            ( hideLoading(),
-              showWeatherBox(),
-              humidity.innerHTML = `location does not allowed Search for your city`)
+            (hideLoading(),
+            showWeatherBox(),
+            (humidity.innerHTML = `location does not allowed Search for your city`))
           );
         }
       );
@@ -44,9 +39,8 @@ if (userlongitude) {
 }
 
 function searchCityManually() {
-  searchBtn.addEventListener("click", () => {
-
-    
+  searchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     const searchedCity = document.getElementById("searchArea").value;
     if (searchedCity) {
       getweatherData(searchedCity);
@@ -56,17 +50,5 @@ function searchCityManually() {
   });
 }
 
-
 searchCityManually();
-
-
-
-
-
-
-
-
-
-  
-  
 
